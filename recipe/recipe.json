@@ -1,0 +1,30 @@
+{
+    "manifests": {
+        "symsvel-framework/module-symsvel-module-countries": {
+            "manifest": {
+                "bundles": {
+                    "SymSvel\\Module\\SymsvelModuleCountries\\SymsvelModuleCountriesBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/routes/symsvel-module-countries.yaml": {
+                    "contents": [
+                        "symsvel-module-countries:",
+                        "    resource:",
+                        "        path: '@SymsvelModuleCountriesBundle/src/Controller/'",
+                        "        namespace: SymSvel\\Module\\SymsvelModuleCountries\\Controller",
+                        "    type: attribute",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "REPLACE_WITH_RECIPE_COMMIT_SHA"
+        }
+    }
+}
