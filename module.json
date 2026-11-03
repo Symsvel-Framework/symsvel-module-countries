@@ -1,6 +1,6 @@
 {
     "schema": 1,
-    "name": "SymsvelModuleCountries",
+    "name": "Countries",
     "dependencies": {},
     "tables": [],
     "components": {

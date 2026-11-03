@@ -1,3 +1,3 @@
-# SymsvelModuleCountries
+# Countries
 
 Documentation développeur.

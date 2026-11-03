@@ -1,9 +1,9 @@
 {
     "manifests": {
-        "symsvel-framework/module-symsvel-module-countries": {
+        "symsvel-framework/module-countries": {
             "manifest": {
                 "bundles": {
-                    "SymSvel\\Module\\SymsvelModuleCountries\\SymsvelModuleCountriesBundle": [
+                    "SymSvel\\Module\\Countries\\CountriesBundle": [
                         "all"
                     ]
                 },
@@ -12,12 +12,12 @@
                 }
             },
             "files": {
-                "config/routes/symsvel-module-countries.yaml": {
+                "config/routes/countries.yaml": {
                     "contents": [
-                        "symsvel-module-countries:",
+                        "countries:",
                         "    resource:",
-                        "        path: '@SymsvelModuleCountriesBundle/src/Controller/'",
-                        "        namespace: SymSvel\\Module\\SymsvelModuleCountries\\Controller",
+                        "        path: '@CountriesBundle/src/Controller/'",
+                        "        namespace: SymSvel\\Module\\Countries\\Controller",
                         "    type: attribute",
                         ""
                     ],
