@@ -64,3 +64,9 @@ des métadonnées. Les états booléens de la fixture sont insérés avec le typ
 DBAL explicite, comme en base réelle. Le test ne valide ni la compilation
 ni le seed des 249 pays sur PostgreSQL, MySQL ou MariaDB : les CT sur les
 quatre SGBD sont requis avant clôture.
+
+Le contrôleur vérifie toujours l'ACL **avant** d'évaluer le mode
+multilingue : une modification par un compte sans `countries:manage`
+renvoie `403`, tandis qu'un compte autorisé reçoit `404` si le mode
+monolingue masque l'administration. La fixture teste explicitement
+ces deux réponses sans affaiblir l'autorisation serveur.

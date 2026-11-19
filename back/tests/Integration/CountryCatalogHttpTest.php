@@ -94,7 +94,10 @@ final class CountryCatalogHttpTest extends TestCase
             $public = new PublicCountriesController($catalog, $locale);
             $request = Request::create('/apibo/countries?translation_lang=fr');
             self::assertSame(404, $bo->list($request)->getStatusCode());
+            self::assertSame(403, $bo->update(self::patch('JP', true), 'JP')->getStatusCode());
+            $gate->manage = true;
             self::assertSame(404, $bo->update(self::patch('JP', true), 'JP')->getStatusCode());
+            $gate->manage = false;
 
             // Public reference data must remain usable on a monolingual project.
             $publicResponse = $public(Request::create('/apiopen/countries?translation_lang=fr'));
