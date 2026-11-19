@@ -38,3 +38,8 @@ multilingue et les tests E2E XT. Ne pas déclarer la release terminée avant
 CI verte, documentation et crash-tests utilisateur.
 
 Le statut reste **draft** tant que ces vérifications ne sont pas réalisées.
+
+La recette `recipe/recipe.json` du package reflète le chemin de contrôleurs
+réel et le `ref` du catalogue source de `symsvel-recipes`. Ce fichier reste
+un modèle interne : seule la recette aplatie effectivement publiée par le
+catalogue Flex est consommée par une installation.
