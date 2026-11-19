@@ -49,3 +49,18 @@ XT, en installation neuve `--dev` :
 La CI du module est verte au 19/11/2026, mais le crash-test utilisateur
 et la validation du workflow distribué restent nécessaires. La PR
 reste **draft** jusqu'à ces vérifications.
+
+### Couverture d'intégration HTTP / SQLite (19/11/2026)
+
+`CountryCatalogHttpTest` utilise une véritable connexion DBAL SQLite en
+mémoire et un `SettingManager` connecté à Doctrine ORM. Les contrôleurs
+publics et BO réels sont appelés avec `Request` Symfony, tandis que seule
+la frontière d'autorisation `BoAccessGate` est simulée. Le test vérifie
+l'exposition publique des seuls pays actifs en projet monolingue, le
+masquage BO (404), puis l'apparition de la liste après activation de
+`languages.multilingual`, le contrôle `countries:list/manage`, le refus
+des charges JSON incorrectes, l'activation/désactivation et la conservation
+des métadonnées. Les états booléens de la fixture sont insérés avec le type
+DBAL explicite, comme en base réelle. Le test ne valide ni la compilation
+ni le seed des 249 pays sur PostgreSQL, MySQL ou MariaDB : les CT sur les
+quatre SGBD sont requis avant clôture.
