@@ -27,19 +27,25 @@ pas modifiables depuis le BO.
 - L'interface BO utilise `DataTable`, `Pagination` et les jetons
   graphiques existants, sans copie de composants.
 
-## Travaux d'intégration encore nécessaires
+## Intégration et validations restantes (19/11/2026)
 
-Avant activation dans le manifeste des modules natifs du Setup, valider :
-la résolution Composer des dépendances privées, l'enregistrement du bundle et
-des routes par la recipe Flex, la réservation des versions des migrations dans
-Tooling, l'installation et les migrations sur PostgreSQL, MySQL, MariaDB et
-SQLite, les contrats API/ACL, la navigation après changement du paramètre
-multilingue et les tests E2E XT. Ne pas déclarer la release terminée avant
-CI verte, documentation et crash-tests utilisateur.
+Countries est désormais déclaré **natif** dans
+`symsvel-back/config/symsvel-native-modules.json`, immédiatement après
+Languages. La recette Flex publiée dans `symsvel-recipes/main` déclare
+`CountriesBundle` et importe le dossier réel
+`back/src/Controller/`. Le fichier `recipe/recipe.json` reste son modèle
+dans le module : c'est la recette du catalogue qui est consommée par Flex.
 
-Le statut reste **draft** tant que ces vérifications ne sont pas réalisées.
+**La publication de la recipe ne valide pas son exécution.**
+Avant de passer la PR Countries de draft à prête pour revue, vérifier sur
+XT, en installation neuve `--dev` :
+- la résolution Composer et l'application de la recipe (bundle + routes) ;
+- l'ordre et l'exécution des migrations et des seeds des 249 pays ;
+- les quatre moteurs PostgreSQL, MySQL, MariaDB et SQLite ;
+- l'accès `/apiopen/countries` sans multilinguisme, les ACL et
+  la visibilité conditionnelle du menu BO ;
+- la navigation après activation du multilinguisme et les tests E2E.
 
-La recette `recipe/recipe.json` du package reflète le chemin de contrôleurs
-réel et le `ref` du catalogue source de `symsvel-recipes`. Ce fichier reste
-un modèle interne : seule la recette aplatie effectivement publiée par le
-catalogue Flex est consommée par une installation.
+La CI du module est verte au 19/11/2026, mais le crash-test utilisateur
+et la validation du workflow distribué restent nécessaires. La PR
+reste **draft** jusqu'à ces vérifications.
