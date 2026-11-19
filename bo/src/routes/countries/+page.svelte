@@ -33,10 +33,10 @@
     { key: 'default_currency', label: t.currency, format: (value) => value ? String(value) : '—' },
     { key: 'official_languages', label: t.languages,
       format: (_, country) => country.official_languages.join(', ') || '—' },
-    { key: 'active', label: t.active, format: (value) => value ? t.yes : t.no }
+    { key: 'active', variant: (country) => country.active ? 'warning' : 'success', label: t.active, format: (value) => value ? t.yes : t.no }
   ]);
   const actions = $derived<DataAction<BoCountry>[]>(canManage ? [{
-    key: 'active', label: (country) => country.active ? t.disable : t.enable,
+    key: 'active', variant: (country) => country.active ? 'warning' : 'success', label: (country) => country.active ? t.disable : t.enable,
     disabled: () => saving !== '',
     onClick: (country) => { void toggle(country); }
   }] : []);

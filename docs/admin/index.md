@@ -17,3 +17,10 @@ sans recharger la page.
 
 L'affichage immédiat du nouveau lien au changement du mode multilingue
 et le crash-test XT doivent être vérifiés durant l'intégration.
+
+### Conventions de couleur des boutons (19/11/2026)
+
+Activer un pays est positif (vert), désactiver sa disponibilité est réversible (orange). Les ACL et l'installation native sont inchangées.
+Les couleurs et l'état désactivé proviennent des variantes natives du BO hôte,
+voir `symsvel-bo/docs/dev/bo-components.md`, sans CSS de module additionnel.
+CI et CT visuel clair/sombre requis.
