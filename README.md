@@ -1,7 +1,14 @@
-# Countries
+# SymSvel Countries
 
-Module SymSvel (manifest schema 1).
+Portage du référentiel **249 pays et territoires** de XCore.
 
-## CI (10/11/2026)
+Module prévu comme **natif obligatoire** de la distribution, installé avec
+Languages, quelle que soit la configuration linguistique. L'accès à
+l'administration des pays est conditionné par le paramètre Settings
+`languages.multilingual` ; l'accès aux données App/Front ne l'est pas.
 
-`.github/workflows/qa.yml` exécute Composer et les tests du module sur le runner Docker ARM64 d'organisation (`self-hosted`, `linux`, `ARM64`, `symsvel`), avec PHP 8.4 préinstallé. La CI GitHub-hosted originale est conservée et désactivée dans `.github/workflows/qa.yml.stub`. Pour revenir aux runners GitHub, restaurer ce `.stub` sous le nom `qa.yml`. Les jobs locaux nécessitent que le Mac et Docker soient disponibles ; runner réservé aux contributions de confiance. Validation finale soumise à une CI verte.
+**État : développement sur `dev`, PR draft.** Le module n'est pas encore
+inscrit au manifeste natif : recette, versions de migrations, intégration
+multi-SGBD, CI et CT XT restent à vérifier avant publication.
+
+Voir `docs/dev/index.md` et `docs/admin/index.md`.

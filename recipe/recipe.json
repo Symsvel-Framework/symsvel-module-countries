@@ -16,7 +16,7 @@
                     "contents": [
                         "countries:",
                         "    resource:",
-                        "        path: '@CountriesBundle/src/Controller/'",
+                        "        path: '../../vendor/symsvel-framework/module-countries/back/src/Controller/'",
                         "        namespace: SymSvel\\Module\\Countries\\Controller",
                         "    type: attribute",
                         ""
@@ -24,7 +24,7 @@
                     "executable": false
                 }
             },
-            "ref": "REPLACE_WITH_RECIPE_COMMIT_SHA"
+            "ref": "4d018101bea9cbe7e809126d66c0f2c2af45c204"
         }
     }
 }

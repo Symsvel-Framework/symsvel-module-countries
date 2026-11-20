@@ -1,8 +1,14 @@
 {
     "schema": 1,
     "name": "Countries",
-    "dependencies": {},
-    "tables": [],
+    "dependencies": {
+        "languages": "*",
+        "settings": "*",
+        "acls": "*"
+    },
+    "tables": [
+        "symsvel_countries"
+    ],
     "components": {
         "back": "back",
         "bo": "bo",
