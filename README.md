@@ -1,5 +1,11 @@
 # SymSvel Countries
 
+> [!IMPORTANT]
+> **Vous souhaitez utiliser SymSvel ? Rendez-vous sur [SymSvel CLI](https://github.com/Symsvel-Framework/symsvel-cli).** Ce dépôt est un **composant du framework**, pas un point d'installation autonome. Création de projets, installation des modules et mises à jour passent par la CLI. Les éventuelles commandes Composer, npm ou Symfony décrites ci-dessous concernent le travail des mainteneurs, sauf indication explicite contraire.
+>
+> [!WARNING]
+> **SymSvel est en cours de développement.** Les fonctionnalités et procédures peuvent évoluer ou présenter des anomalies. **Utilisation à vos risques et périls.**
+
 Portage du référentiel **249 pays et territoires** de XCore.
 
 Module prévu comme **natif obligatoire** de la distribution, installé avec
@@ -7,12 +13,18 @@ Languages, quelle que soit la configuration linguistique. L'accès à
 l'administration des pays est conditionné par le paramètre Settings
 `languages.multilingual` ; l'accès aux données App/Front ne l'est pas.
 
-**État : développement sur `dev`, PR draft.** Le module n'est pas encore
-inscrit au manifeste natif : recette, versions de migrations, intégration
-multi-SGBD, CI et CT XT restent à vérifier avant publication.
+**Historique d'intégration :** la recette, les migrations, la compatibilité multi-SGBD et les crash-tests doivent être vérifiés pour chaque version publiée. Le statut d'une ancienne branche de développement n'est pas un indicateur de disponibilité de la release actuelle.
 
 Voir `docs/dev/index.md` et `docs/admin/index.md`.
 
 ## Distribution stable v1.0.0 (20/11/2026)
 
 Le manifeste Composer du tag stable déclare exclusivement des contraintes `^1.0` pour ses dépendances SymSvel : `symsvel-framework/module-languages`, `symsvel-framework/module-settings`, `symsvel-framework/module-acls`. Les références `dev-dev` restent réservées à la branche `dev` et à l'installation de maintenance avec `--dev`. Le tag `v1.0.0` n'est à publier **qu'après** le tag stable de chaque dépendance, son indexation dans Satis et la réussite des contrôles CI ; aucune release n'est produite par ce commit.
+
+---
+
+## Participer et soutenir le projet
+
+SymSvel est un projet en cours de développement. Pour contribuer, proposer une amélioration ou échanger avec le mainteneur : **[xavier@xavier-tezza.fr](mailto:xavier@xavier-tezza.fr)**.
+
+SymSvel vous est utile et vous souhaitez me remercier ? **Offrez-moi une bière ! 🍺** (lien PayPal à compléter avant l'ouverture publique).
