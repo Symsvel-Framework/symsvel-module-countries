@@ -23,6 +23,12 @@ Le manifeste Composer du tag stable déclare exclusivement des contraintes `^1.0
 
 ---
 
+## Intégration continue GitHub-hosted (22/11/2026)
+
+Le workflow actif `.github/workflows/qa.yml` s'exécute désormais sur **GitHub-hosted Ubuntu 24.04**, sans runner Docker local. Les tests Composer et PHP 8.4 sont conservés. L'ancien `qa.yml.stub`, lorsqu'il existe, est une archive inactive.
+
+Les runners auto-hébergés restent réservés aux dépôts privés `symsvel-packages` et `symsvel-recipes`. Les crash-tests locaux restent requis indépendamment de la CI.
+
 ## Licence MIT et contributions
 
 Ce dépôt est distribué sous [licence MIT](LICENSE). Le code peut être utilisé, modifié et redistribué, y compris dans des projets commerciaux ou propriétaires, dans les conditions de cette licence (notamment la conservation de la notice de copyright et de licence).
