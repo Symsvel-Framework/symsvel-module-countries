@@ -13,15 +13,11 @@ Languages, quelle que soit la configuration linguistique. L'accès à
 l'administration des pays est conditionné par le paramètre Settings
 `languages.multilingual` ; l'accès aux données App/Front ne l'est pas.
 
-**Historique d'intégration :** la recette, les migrations, la compatibilité multi-SGBD et les crash-tests doivent être vérifiés pour chaque version publiée. Le statut d'une ancienne branche de développement n'est pas un indicateur de disponibilité de la release actuelle.
+**État : développement sur `dev`, PR draft.** Le module n'est pas encore
+inscrit au manifeste natif : recette, versions de migrations, intégration
+multi-SGBD, CI et CT XT restent à vérifier avant publication.
 
 Voir `docs/dev/index.md` et `docs/admin/index.md`.
-
-## Distribution stable v1.0.0 (20/11/2026)
-
-Le manifeste Composer du tag stable déclare exclusivement des contraintes `^1.0` pour ses dépendances SymSvel : `symsvel-framework/module-languages`, `symsvel-framework/module-settings`, `symsvel-framework/module-acls`. Les références `dev-dev` restent réservées à la branche `dev` et à l'installation de maintenance avec `--dev`. Le tag `v1.0.0` n'est à publier **qu'après** le tag stable de chaque dépendance, son indexation dans Satis et la réussite des contrôles CI ; aucune release n'est produite par ce commit.
-
----
 
 ## Intégration continue GitHub-hosted (22/11/2026)
 
@@ -42,3 +38,7 @@ Ce dépôt est distribué sous [licence MIT](LICENSE). Le code peut être utilis
 SymSvel est un projet en cours de développement. Pour contribuer, proposer une amélioration ou échanger avec le mainteneur : **[xavier@xavier-tezza.fr](mailto:xavier@xavier-tezza.fr)**.
 
 SymSvel vous est utile et vous souhaitez me remercier ? **Offrez-moi une bière ! 🍺** (lien PayPal à compléter avant l'ouverture publique).
+
+## Promotion stable (24/11/2026)
+
+Les contraintes Composer de publication sont stables (`^1.0`), sans modifier le canal `dev`. Publier après les dépendances, leur indexation et les CI vertes. CT stable distinct.

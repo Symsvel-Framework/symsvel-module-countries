@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { getProjectBrand } from '../../../../branding';
+  const brandName = getProjectBrand();
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
   import { resolve } from '$app/paths';
@@ -33,7 +35,7 @@
     { key: 'default_currency', label: t.currency, format: (value) => value ? String(value) : '—' },
     { key: 'official_languages', label: t.languages,
       format: (_, country) => country.official_languages.join(', ') || '—' },
-    { key: 'active', variant: (country) => country.active ? 'warning' : 'success', label: t.active, format: (value) => value ? t.yes : t.no }
+    { key: 'active', label: t.active, format: (value) => value ? t.yes : t.no }
   ]);
   const actions = $derived<DataAction<BoCountry>[]>(canManage ? [{
     key: 'active', variant: (country) => country.active ? 'warning' : 'success', label: (country) => country.active ? t.disable : t.enable,
@@ -83,7 +85,7 @@
   }
 </script>
 
-<svelte:head><title>{t.title} | SymSvel BO</title></svelte:head>
+<svelte:head><title>{t.title} | {$brandName} BO</title></svelte:head>
 <div class="countries-page">
   <header class="page-heading">
     <div><h1>{t.title}</h1><p>{t.intro}</p></div>

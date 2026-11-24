@@ -70,3 +70,19 @@ multilingue : une modification par un compte sans `countries:manage`
 renvoie `403`, tandis qu'un compte autorisé reçoit `404` si le mode
 monolingue masque l'administration. La fixture teste explicitement
 ces deux réponses sans affaiblir l'autorisation serveur.
+
+
+### Compatibilité de la vue BO avec DataTable (22/11/2026)
+
+Le premier workflow CD du projet crash-test Choralys a identifié une erreur
+`DataColumn<BoCountry>` : la colonne `active` déclarait une propriété
+`variant`, pourtant réservée aux `DataAction`. La vue BO Countries utilise
+désormais uniquement `key`, `label` et `format` pour cette colonne ;
+l'action d'activation/désactivation conserve son `variant` dynamique.
+Ce correctif évite les deux erreurs TypeScript associées lors de `npm run check`.
+Validation attendue : CI Countries puis compilation intégrée du BO Choralys,
+suivie du crash-test sur VPS. Cette modification ne change ni l'API ni les ACL.
+
+## Branding et sécurité
+
+Les écrans du module lisent le nom public via `getProjectBrand()` du BO et affichent `$brandName`. Le layout effectue la requête ; le module ne crée ni état ni requête indépendante. L'intégration est vérifiée par la QA ; le CT doit vérifier les titres avec un nom de projet personnalisé. La QA PHP exécute également `composer audit --locked` après installation, sans exclusion d'avis.
