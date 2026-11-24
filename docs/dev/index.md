@@ -82,3 +82,7 @@ l'action d'activation/désactivation conserve son `variant` dynamique.
 Ce correctif évite les deux erreurs TypeScript associées lors de `npm run check`.
 Validation attendue : CI Countries puis compilation intégrée du BO Choralys,
 suivie du crash-test sur VPS. Cette modification ne change ni l'API ni les ACL.
+
+## Branding et sécurité
+
+Les écrans du module lisent le nom public via `getProjectBrand()` du BO et affichent `$brandName`. Le layout effectue la requête ; le module ne crée ni état ni requête indépendante. L'intégration est vérifiée par la QA ; le CT doit vérifier les titres avec un nom de projet personnalisé. La QA PHP exécute également `composer audit --locked` après installation, sans exclusion d'avis.

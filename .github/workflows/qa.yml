@@ -16,4 +16,5 @@ jobs:
           php -v
           php -r 'if (PHP_VERSION_ID < 80400 || PHP_VERSION_ID >= 80500) { exit(1); }'
       - run: composer install --no-interaction --prefer-dist
+      - run: composer audit --locked
       - run: composer qa
